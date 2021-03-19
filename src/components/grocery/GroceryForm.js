@@ -1,16 +1,19 @@
 import { Component } from 'react';
   class GroceryForm extends Component {
-    state = { item: "", price: "" }
+    state = { item: "", price: "", complete: false }
     
 
   handleSubmit = (c) => {
     c.preventDefault()
     if (this.props.id) {
       const { updateGrocery, toggleEdit } = this.props
+      this.setState({ item: "", complete: false})
       updateGrocery(this.state)
+
       toggleEdit()
     } else {
       this.props.addGrocery(this.state)
+     
     }
     this.setState({ item: "", price: "" })
   }

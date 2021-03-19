@@ -1,18 +1,20 @@
 import { Component } from 'react';
 import GroceryList from './components/grocery/GroceryList';
 import GroceryForm from './components/grocery/GroceryForm';
+import Footer from './components/grocery/Footer';
 class App extends Component {
   state = {
     groceries: [
-      { id: 1, item: "Apple", price: "2"},
-      { id: 2, item: "Cherry", price: "3"},
-      { id: 3, item: "Banana", price: "1"},
+      { id: 1, item: "Apple", price: "$2", complete: true},
+      { id: 2, item: "Cherry", price: "$3", complete: false},
+      { id: 3, item: "Banana", price: "$1", complete: true},
 
-    ]
+    ],
+    filter: 'All'
   }
-
+  setFilter = (filter) => this.setState({ filter })
   getId = () => {
-    // NOTE We are just using this as a helper function for id's since we aren't using a db yet
+   
     return Math.floor((1 + Math.random()) * 0x10000)
       .toString(16)
       .substring(1);
@@ -35,9 +37,11 @@ class App extends Component {
 
   updateGrocery = (incomingGrocery) => {
     const {groceries} = this.state
-    const {id} = incomingGrocery
-    this.setState({
-      groceries: groceries.map( g => {
+    const {id, complete} = incomingGrocery
+    const newGrocery ={ id: this.getId(), id, complete}
+    this.setState({ 
+      groceries: 
+      groceries.map( g => {
         if (g.id === id ) {
           return {...incomingGrocery}
         }
@@ -45,7 +49,17 @@ class App extends Component {
       })
     })
   }
-
+  visibleItems = () => {
+    const { groceries, filter } = this.state 
+    switch(filter) {
+      case 'Active':
+        return groceries.filter( g => !g.complete)
+      case 'Completed':
+        return groceries.filter( g => g.complete)
+      default:
+        return groceries
+    }
+  }
   updateComplete = (id) => {
     const { groceries } = this.state
     this.setState({
@@ -62,14 +76,16 @@ class App extends Component {
   }
 
   render() {
-    const { groceries } = this.state
+    const { groceries, filter } = this.state
     
     return (
       <>
       <h1>Grocery Store</h1>
+      <Footer filter={filter} setFilter={this.setFilter} />
       <GroceryForm addGrocery={this.addGrocery}/>
       <GroceryList 
-       groceries={groceries}
+       groceries={this.visibleItems()}
+       groceries={groceries} 
        removeGrocery={this.removeGrocery}
        updateGrocery={this.updateGrocery} 
        updateComplete={this.updateComplete}

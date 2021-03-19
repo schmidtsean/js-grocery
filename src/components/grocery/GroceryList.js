@@ -5,7 +5,7 @@ const GroceryList = ({ groceries, removeGrocery, updateGrocery, complete }) => {
     <>
       {
         groceries.map( g => (
-          <Grocery 
+          <Grocery key={g.id}
             {...g}
             removeGrocery={removeGrocery}
             updateGrocery={updateGrocery}
