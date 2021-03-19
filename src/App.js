@@ -62,6 +62,7 @@ class App extends Component {
         return groceries
     }
   }
+  
   updateComplete = (id) => {
     const { groceries } = this.state
     this.setState({
