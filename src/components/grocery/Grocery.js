@@ -3,12 +3,12 @@ import GroceryForm from './GroceryForm';
 class Grocery extends Component {
     state = { editing: false }
     toggleEdit = () => {
-        const { editing } = this.state 
+        const { editing, complete, uncomplete } = this.state
         this.setState({ editing: !editing })
     }
     render() {
         const { editing } = this.state
-        const { item, price, id, removeGrocery, updateGrocery} = this.props
+        const { item, price, id, removeGrocery, complete, updateGrocery} = this.props
         return(
             <div>
                 <h1>{item}</h1>
@@ -22,8 +22,20 @@ class Grocery extends Component {
                     :
                     <button onClick={() => this.toggleEdit()}>Edit</button>
                 }
-            </div>
-        )
+             <li
+             style={ complete ? {...styles.complete } : null }
+             onClick={() => updateGrocery(id)}
+             >
+                {item}
+             </li>
+             </div>
+         )
+       }
     }
+    const styles = {
+      complete: {
+          color: "gray",
+          textDecoration: 'line-through'
+      }
 }
-export default Grocery;  
+export default Grocery;

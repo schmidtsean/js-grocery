@@ -8,8 +8,7 @@ class App extends Component {
       { id: 2, item: "Cherry", price: "3"},
       { id: 3, item: "Banana", price: "1"},
 
-    ],
-    filter: "All"
+    ]
   }
 
   getId = () => {
@@ -47,6 +46,21 @@ class App extends Component {
     })
   }
 
+  updateComplete = (id) => {
+    const { groceries } = this.state
+    this.setState({
+      groceries: groceries.map( g => {
+        if (g.id === id) {
+          return {
+            ...g, 
+            complete: !g.complete
+          }
+        }
+        return g
+      })
+    })
+  }
+
   render() {
     const { groceries } = this.state
     
@@ -58,6 +72,7 @@ class App extends Component {
        groceries={groceries}
        removeGrocery={this.removeGrocery}
        updateGrocery={this.updateGrocery} 
+       updateComplete={this.updateComplete}
       />
       </>
 

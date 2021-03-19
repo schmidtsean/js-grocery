@@ -1,9 +1,7 @@
 import Grocery from './Grocery';
-
-const GroceryList = ({ groceries, removeGrocery, updateGrocery }) => {
+const GroceryList = ({ groceries, removeGrocery, updateGrocery, complete }) => {
   console.log(groceries)
   return (
-    
     <>
       {
         groceries.map( g => (
@@ -17,5 +15,4 @@ const GroceryList = ({ groceries, removeGrocery, updateGrocery }) => {
     </>
   )
 }
-
 export default GroceryList;
