@@ -34,9 +34,9 @@ class Grocery extends Component {
         <div>
               <ul style={ complete ? {...styles.complete } : null }
              onClick={() => updateGrocery(id)}>
-            <h1>{item}</h1>
+            <h1>Item: {item}</h1>
             <h3>Price: ${price}</h3>
-            <h3>Stock<Counter /></h3>
+            <h3>Stock<Counter/></h3>
             
             </ul>
             <button style={styles.buttonStyleComplete} onClick={() => updateComplete(id)}>Complete</button>

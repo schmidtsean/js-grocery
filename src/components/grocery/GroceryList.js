@@ -1,4 +1,5 @@
 import Grocery from './Grocery';
+
 const GroceryList = ({ groceries, removeGrocery, updateGrocery, updateComplete }) => {
   return (
     <>

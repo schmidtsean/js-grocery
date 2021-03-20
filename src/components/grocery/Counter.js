@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Grocery from 'react';
+
 class Counter extends Component {
   state = { stock: 0 }
 
@@ -17,8 +17,8 @@ class Counter extends Component {
     return (
       <div>
         <p>{color}: {stock}</p>
-        <button style={{color: "blue"}} onClick={this.inc}>+</button>
-        <button style={{color: "blue"}} onClick={this.dec}>-</button>
+        <button style={{color: "blue"}} onClick={this.inc}>ADD</button>
+        <button style={{color: "blue"}} onClick={this.dec}>SUB</button>
       </div>
     )
   }
