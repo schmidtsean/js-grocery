@@ -1,6 +1,5 @@
 import Grocery from './Grocery';
-const GroceryList = ({ groceries, removeGrocery, updateGrocery, complete }) => {
-  console.log(groceries)
+const GroceryList = ({ groceries, removeGrocery, updateGrocery, updateComplete }) => {
   return (
     <>
       {
@@ -9,6 +8,7 @@ const GroceryList = ({ groceries, removeGrocery, updateGrocery, complete }) => {
             {...g}
             removeGrocery={removeGrocery}
             updateGrocery={updateGrocery}
+            updateComplete={updateComplete}
           />
         ))
       }

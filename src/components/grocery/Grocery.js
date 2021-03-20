@@ -9,7 +9,7 @@ class Grocery extends Component {
     }
     render() {
         const { editing } = this.state
-        const { item, price, id, removeGrocery, complete, updateGrocery} = this.props
+        const { item, price, id, removeGrocery, complete, updateGrocery, updateComplete} = this.props
         const styles = {
           buttonStyleEdit: {
             backgroundColor: "blue"
@@ -35,7 +35,7 @@ class Grocery extends Component {
             <h3>Stock<Counter /></h3>
             
             </ul>
-            
+            <button onClick={() => updateComplete(id)}>Complete</button>
             <button style={styles.buttonStyleDelete} onClick={() => removeGrocery(id)}>
                 Delete Item
             </button>
