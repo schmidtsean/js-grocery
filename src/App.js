@@ -2,6 +2,7 @@ import { Component } from 'react';
 import GroceryList from './components/grocery/GroceryList';
 import GroceryForm from './components/grocery/GroceryForm';
 import Footer from './components/grocery/Footer';
+import './App.css'
 class App extends Component {
   state = {
     groceries: [
@@ -22,7 +23,8 @@ class App extends Component {
 
   addGrocery = (incomingGrocery) => {
     const { groceries } = this.state
-    let newGrocery = { id: this.getId(), ...incomingGrocery }
+    const { title, complete } = incomingGrocery
+    let newGrocery = { id: this.getId(), title, complete, ...incomingGrocery }
     this.setState({ groceries: [...groceries, newGrocery]})
   }
 
@@ -38,7 +40,7 @@ class App extends Component {
   updateGrocery = (incomingGrocery) => {
     const {groceries} = this.state
     const {id, complete} = incomingGrocery
-    const newGrocery ={ id: this.getId(), id, complete}
+    
     this.setState({ 
       groceries: 
       groceries.map( g => {

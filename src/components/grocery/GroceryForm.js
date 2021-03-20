@@ -49,7 +49,7 @@ import { Component } from 'react';
         onChange={this.handleChange}
         placeholder='price'
       />
-      <button type="submit">Submit</button>
+      <button style={{color: "blue"}} type="submit">Submit</button>
     </form>
       )
     }
