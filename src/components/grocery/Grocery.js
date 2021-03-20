@@ -9,7 +9,7 @@ class Grocery extends Component {
     }
     render() {
         const { editing } = this.state
-        const { item, price, stock, id, removeGrocery, complete, updateGrocery} = this.props
+        const { item, price, id, removeGrocery, complete, updateGrocery} = this.props
         const styles = {
           buttonStyleEdit: {
             backgroundColor: "blue"
