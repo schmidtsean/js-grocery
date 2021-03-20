@@ -15,6 +15,10 @@ class Grocery extends Component {
             backgroundColor: "blue"
       },
 
+        buttonStyleComplete: {
+          backgroundColor: "yellow"
+        },
+        
         buttonStyleDelete: {
           backgroundColor: "red"
         },
@@ -35,17 +39,17 @@ class Grocery extends Component {
             <h3>Stock<Counter /></h3>
             
             </ul>
-            <button onClick={() => updateComplete(id)}>Complete</button>
+            <button style={styles.buttonStyleComplete} onClick={() => updateComplete(id)}>Complete</button>
+            
             <button style={styles.buttonStyleDelete} onClick={() => removeGrocery(id)}>
                 Delete Item
             </button>
           
             
-            {
-                editing ?
-                <GroceryForm {...this.props} toggleEdit={this.toggleEdit} />
-                :
-                <button style={styles.buttonStyleEdit} onClick={() => this.toggleEdit()}>Edit</button>
+            {editing ?
+              <GroceryForm {...this.props} toggleEdit={this.toggleEdit} />
+              :
+              <button style={styles.buttonStyleEdit} onClick={() => this.toggleEdit()}>Edit</button>
             }
             
             
