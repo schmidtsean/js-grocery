@@ -16,7 +16,7 @@ class Counter extends Component {
     const { color } = this.props
     return (
       <div>
-        <p>{color}: {stock}</p>
+        <p>{color}stock:{stock}</p>
         <button style={{color: "blue"}} onClick={this.inc}>ADD</button>
         <button style={{color: "blue"}} onClick={this.dec}>SUB</button>
       </div>

@@ -33,7 +33,7 @@ import { Component } from 'react';
   
   
   render() {
-    const { item, price, stock } = this.state
+    const { item, price } = this.state
     return (
     <form onSubmit={this.handleSubmit}>
       <input

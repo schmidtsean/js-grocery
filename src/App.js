@@ -13,7 +13,9 @@ class App extends Component {
     ],
     filter: 'All'
   }
+  
   setFilter = (filter) => this.setState({ filter })
+  
   getId = () => {
    
     return Math.floor((1 + Math.random()) * 0x10000)
