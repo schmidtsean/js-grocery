@@ -3,6 +3,7 @@ import GroceryList from './components/grocery/GroceryList';
 import GroceryForm from './components/grocery/GroceryForm';
 import Footer from './components/grocery/Footer';
 import './App.css'
+import Navbar from './components/grocery/Navbar';
 class App extends Component {
   state = {
     groceries: [
