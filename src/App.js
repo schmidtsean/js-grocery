@@ -3,7 +3,6 @@ import GroceryList from './components/grocery/GroceryList';
 import GroceryForm from './components/grocery/GroceryForm';
 import Footer from './components/grocery/Footer';
 import './App.css'
-import Navbar from './components/grocery/Navbar';
 class App extends Component {
   state = {
     groceries: [
@@ -85,7 +84,7 @@ class App extends Component {
     return (
       <>
       <h1>Grocery Store</h1>
-      <a style={{color: 'white'}} href='./home.html'>Home</a>
+      <a style={{color: 'white'}} href='home.js'>Home</a>
       <Footer filter={filter} setFilter={this.setFilter} />
       <GroceryForm addGrocery={this.addGrocery}/>
       <GroceryList 
