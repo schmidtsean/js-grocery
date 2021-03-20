@@ -2,13 +2,14 @@ import { Component } from 'react';
 import GroceryList from './components/grocery/GroceryList';
 import GroceryForm from './components/grocery/GroceryForm';
 import Footer from './components/grocery/Footer';
+import Counter from './components/grocery/Counter';
 import './App.css'
 class App extends Component {
   state = {
     groceries: [
-      { id: 1, item: "Apple", price: "$2", complete: true},
-      { id: 2, item: "Cherry", price: "$3", complete: false},
-      { id: 3, item: "Banana", price: "$1", complete: true},
+      { id: 1, item: "Apple", price: "2", complete: false},
+      { id: 2, item: "Cherry", price: "3", complete: false},
+      { id: 3, item: "Banana", price: "1", complete: false},
 
     ],
     filter: 'All'

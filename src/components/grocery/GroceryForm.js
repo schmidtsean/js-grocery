@@ -26,14 +26,14 @@ import { Component } from 'react';
   componentDidMount() {
     if (this.props.id) {
       const { id, item, price } = this.props
-      this.setState({ id, item, price })
+      this.setState({ id, item, price, complete: false })
     }
   }
   
   
   
   render() {
-    const { item, price } = this.state
+    const { item, price, stock } = this.state
     return (
     <form onSubmit={this.handleSubmit}>
       <input
@@ -49,6 +49,7 @@ import { Component } from 'react';
         onChange={this.handleChange}
         placeholder='price'
       />
+      
       <button style={{color: "blue"}} type="submit">Submit</button>
     </form>
       )

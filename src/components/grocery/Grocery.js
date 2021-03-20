@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import GroceryForm from './GroceryForm';
+import Counter from './Counter';
 class Grocery extends Component {
     state = { editing: false }
     toggleEdit = () => {
@@ -8,7 +9,7 @@ class Grocery extends Component {
     }
     render() {
         const { editing } = this.state
-        const { item, price, id, removeGrocery, complete, updateGrocery} = this.props
+        const { item, price, stock, id, removeGrocery, complete, updateGrocery} = this.props
         const styles = {
           buttonStyleEdit: {
             backgroundColor: "blue"
@@ -30,7 +31,8 @@ class Grocery extends Component {
               <ul style={ complete ? {...styles.complete } : null }
              onClick={() => updateGrocery(id)}>
             <h1>{item}</h1>
-            <h3>{price}</h3>
+            <h3>Price: ${price}</h3>
+            <h3>Stock<Counter /></h3>
             
             </ul>
             
