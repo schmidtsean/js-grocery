@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/grocery/Navbar';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
     <App />
+    
   </React.StrictMode>,
-  document.getElementById('app')
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

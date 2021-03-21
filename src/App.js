@@ -86,7 +86,7 @@ class App extends Component {
     return (
       <>
       <h1>Grocery Store</h1>
-      <a style={{color: 'white'}} href='home.js'>Home</a>
+     
       <Footer filter={filter} setFilter={this.setFilter} />
       <GroceryForm addGrocery={this.addGrocery}/>
       <GroceryList 
