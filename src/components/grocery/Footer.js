@@ -7,11 +7,11 @@ const styles = {
     marginRight: '5px',
   }
 }
-const filterLink = (current, name, setFilter) => {
-  if (current === name) {
-    return <span>{name}</span>
+const filterLink = (current, item, setFilter) => {
+  if (current === item) {
+    return <span>{item}</span>
   } else {
-    return <span style={styles.link} onClick={() => setFilter(name)}>{name}</span>
+    return <span style={styles.link} onClick={() => setFilter(item)}>{item}</span>
   }
 }
 const Footer = ({ filter, setFilter}) => {

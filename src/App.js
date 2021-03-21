@@ -86,12 +86,10 @@ class App extends Component {
     return (
       <>
       <h1>Grocery Store</h1>
-     
       <Footer filter={filter} setFilter={this.setFilter} />
       <GroceryForm addGrocery={this.addGrocery}/>
       <GroceryList 
        groceries={this.visibleItems()}
-       groceries={groceries} 
        removeGrocery={this.removeGrocery}
        updateGrocery={this.updateGrocery} 
        updateComplete={this.updateComplete}
